@@ -15,6 +15,5 @@ The result is immediately displayed on the Python shell as soon as the Python in
 REPL
 R-read
 E-evaluate
-P-loop
+P-print
 L-loop
-
