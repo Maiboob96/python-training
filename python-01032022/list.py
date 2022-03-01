@@ -315,3 +315,93 @@ print('Return Value:', return_value)
 print('Updated List:', languages)
 
 7) List reverse():
+ ______________________________________
+The reverse() method reverses the elements of the list.
+
+Syntax:
+    list.reverse()
+    
+reverse() parameter
+The reverse() method doesn't take any arguments.
+Return Value from reverse()
+The reverse() method doesn't return any value. It updates the existing list.
+
+Programs:
+-----------------
+Ex 1)
+# Operating System List
+systems = ['Windows', 'macOS', 'Linux']
+print('Original List:', systems)
+
+# List Reverse
+systems.reverse()
+
+
+# updated list
+print('Updated List:', systems)
+
+Ex 2:Accessing Elements in Reversed Order
+# Operating System List
+systems = ['Windows', 'macOS', 'Linux']
+
+# Printing Elements in Reversed Order
+for o in reversed(systems):
+    print(o)
+
+    
+8) List sort():
+__________________________________________
+
+The sort() method sorts the elements of a given list in a specific ascending or descending order.
+
+Syntax:
+    list.sort(key=..., reverse=...)
+    
+sort() Parameters
+By default, sort() doesn't require any extra parameters. However, it has two optional parameters:
+
+reverse - If True, the sorted list is reversed (or sorted in Descending order)
+key - function that serves as a key for the sort comparison
+
+sort() Return Value
+The sort() method doesn't return any value. Rather, it changes the original list.
+
+If you want a function to return the sorted list rather than change the original list, use sorted().
+
+Programs:
+Ex 1: sort a given list
+    
+# vowels list
+vowels = ['e', 'a', 'u', 'o', 'i']
+
+# sort the vowels
+vowels.sort()
+
+# print vowels
+print('Sorted list:', vowels)
+
+Ex 2: sor the list in Descending order
+ # vowels list
+vowels = ['e', 'a', 'u', 'o', 'i']
+
+# sort the vowels
+vowels.sort(reverse=True)
+
+# print vowels
+print('Sorted list (in Descending):', vowels)
+
+
+Ex 3: sort the list using key
+    
+# take second element for sort
+def takeSecond(elem):
+    return elem[1]
+
+# random list
+random = [(2, 2), (3, 4), (4, 1), (1, 3)]
+
+# sort list with key
+random.sort(key=takeSecond)
+
+# print list
+print('Sorted list:', random)
