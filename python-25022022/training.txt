@@ -40,3 +40,17 @@ Less than or equal to: a <= b
 Greater than: a > b
 Greater than or equal to: a >= 
 
+------------------
+-> Python Loops
+
+Python has two primitive loop commands:
+
+while loops
+for loops
+
+->The while Loop
+With the while loop we can execute a set of statements as long as a condition is true.
+
+->The break Statement
+With the break statement we can stop the loop even if the while condition is true.
+
