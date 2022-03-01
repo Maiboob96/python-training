@@ -1,1 +1,31 @@
-day2
+->Control Statements in python:
+
+1) Sequence statements
+2) Conditional statements
+3) Loop statements
+
+-> Loops and Control Statements (continue, break and pass) in Python
+
+1) While Loop
+
+Syntax :
+while expression:
+    statement(s)
+
+
+2) For in Loop
+
+Syntax:
+
+for iterator_var in sequence:
+    statements(s)
+
+
+
+3) Nested Loops
+
+Syntax:
+for iterator_var in sequence:
+    for iterator_var in sequence:
+        statements(s)
+        statements(s)
