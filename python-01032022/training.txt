@@ -1,1 +1,7 @@
-text
+Methods In Python
+______________________
+
+
+
+
+
