@@ -1,4 +1,5 @@
-Python Concepts
+Python Basic Concepts
+------------------------
 
 -> In python there are two methods to runing code
 1) Interactive mode 
@@ -17,3 +18,24 @@ R-read
 E-evaluate
 P-print
 L-loop
+
+
+Range function
+---------------
+Python range() function returns the sequence of the given number between the given range.
+
+range() is a built-in function of Python.
+In simple terms, range() allows the user to generate a series of numbers within a given range.
+Depending on how many arguments the user is passing to the function, 
+user can decide where that series of numbers will begin and end as well as how big the difference will be between one number and the next.range() takes mainly three arguments.
+
+start: integer starting from which the sequence of integers is to be returned
+stop: integer before which the sequence of integers is to be returned. The range of integers end at stop – 1.
+step: integer value which determines the increment between each integer in the sequence
+
+
+There are three ways you can call range() :
+-------------------------------------------
+range(stop) takes one argument.
+range(start, stop) takes two arguments.
+range(start, stop, step) takes three arguments.
