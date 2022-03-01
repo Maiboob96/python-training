@@ -55,6 +55,19 @@ if x > 10:
     print("and also above 20!")
   else:
     print("but not above 20.")
+---------------------------------------
 
+i = 1
+while i < 6:
+  print(i)
+  i += 1
     
+-> Exit the loop when i is 3:
+
+i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1
     
