@@ -9,7 +9,7 @@ Dictionary fromkeys()
 Dictionary get()
 Dictionary items()
 Dictionary keys()
-Dictionary popitem()
+Dictionary pop item()
 Dictionary setdefault()
 Dictionary pop()
 Dictionary values()
@@ -218,7 +218,85 @@ The items() method returns a view object that displays a list of a given diction
 
 Programs:
 ---------------
-Exp 1:
+Exp 1: Get all items of a dictionary with items()
+# random languages dictionary
+languages = { 'python': 2, 'java': 3, 'c': 4 }
+
+print(languages.items())
+
+Exp 2: How items() works when a dictionary is modified
+  
+# random languags dictionary
+languages = { 'python': 2, 'java': 3, 'jenkins': 4 }
+
+items = languages.items()
+
+print('Original items:', items)
+
+# delete an item from dictionary
+del[languages['jenkins']]
+
+print('Updated items:', items)  
+
+(6) Dictionary keys():
+---------------------------------------------
+The keys() method returns a view object that displays a list of all the keys in the dictionary
+
+Syntax:
+       dict.keys()
+
+keys() Parameters
+keys() doesn't take any parameters.
+
+Return Value from keys()
+keys() returns a view object that displays a list of all the keys.
+
+When the dictionary is changed, the view object also reflects these changes.
+
+Programs:
+--------------
+Exp 1: How key() works
+
+person = {'name': 'Robert', 'age': 25, 'salary': 5000.0}
+print(person.keys())
+
+empty_dict = {}
+print(empty_dict.keys()
+      
+Exp 2: How keys() works when dictionary is updated
+person = {'name': 'Robert', 'age': 25, }
+
+print('Before dictionary is updated')
+keys = person.keys()
+print(keys)
+
+# adding an element to the dictionary
+person.update({'salary': 3500.0})
+print('\nAfter dictionary is updated')
+print(keys)
+
+
+Exp 3:
+# Python program to demonstrate
+# working of keys()
+
+# initializing dictionary
+test_dict = {"python": 7, "for": 1, "programs": 2}
+
+# accessing 2nd element using naive method
+# using loop
+j = 0
+for i in test_dict:
+    if (j == 1):
+        print('2nd key using loop : ' + i)
+    j = j + 1
+
+# accessing 2nd element using keys()
+print('2nd key using keys() : ' + test_dict.keys()[1])
+      
+output:
+TypeError: 'dict_keys' object is not subscriptable
+2nd key using loop : for
 
 
 
