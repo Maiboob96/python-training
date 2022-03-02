@@ -13,17 +13,21 @@ copy()	-             Returns a shallow copy of the set
 difference() -        Returns a set that is the difference between two sets
 difference_update()	- Updates the existing caller set with the difference between two sets
 discard()-	          Removes the element from the set
-frozenset()	-         Return an immutable frozenset object
 intersection()-       Returns a set that has the intersection of all sets
 intersection_update()-Updates the existing caller set with the intersection of sets
 isdisjoint() -      	Checks whether the sets are disjoint or not
 issubset()-           Returns True if all elements of a set A are present in another set B
 issuperset() -	      Returns True if all elements of a set A occupies set B
 pop()	-               Returns and removes a random element from the set
+remove()	            Removes the specified element
+symmetric_difference()-eturns a set with the symmetric differences of two sets
+symmetric_difference_update()	inserts the symmetric differences from this set and another
+union()               Return a set containing the union of sets
+update()-             Udate the set with another set, or any other iterable
 
 
 (1) set add()
--------------------
+-------------------------------------------------------------------------------------------------
 The set add() method adds a given element to a set if the element is not present in the set.
 
 Syntax:
@@ -35,7 +39,7 @@ Parameter	Description
 elmnt      	Required. The element to add to the set
 
 Programs
----------------------------------------------------
+------------
 Exp 1:
 languages = {"java", "c", "python"}
 
@@ -67,7 +71,7 @@ print(s)
 
 
 (2) set clear()
-------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 The clear() method removes all elements from the set.
 
 Syntax:
@@ -87,7 +91,7 @@ languages.clear()
 print(languages)
 
 (3)  set copy():
--------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
 
 The copy() method copies the set
 
@@ -120,7 +124,7 @@ print(set2)
 
 
 (4) set difference():
-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
 The difference() method returns a set that contains the difference between two sets.
 
 Meaning: The returned set contains items that exist only in the first set, and not in both sets.
@@ -150,7 +154,7 @@ print (B.difference(A))
 
 
 (5)  set difference_update()
-----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 
 The difference_update() method removes the items that exist in both sets.
 
@@ -186,7 +190,7 @@ print(A)
 
 
 (6) set discard():
---------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 The discard() method removes the specified item from the set.
 
@@ -210,7 +214,7 @@ print(fruits)
 
 
 (7)  Set intersection() 
----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
 The intersection() method returns a set that contains the similarity between two or more sets.
 
 Meaning: The returned set contains only items that exist in both sets, or in all sets if the comparison is done with more than two sets.
@@ -262,7 +266,7 @@ print("set1 intersection set2 : ",
       
 
 (8) Set isdisjoint() 
------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
 The isdisjoint() method returns True if none of the items are present in both sets, otherwise it returns False.
 
 Syntax:
@@ -288,6 +292,323 @@ y = {"google", "microsoft", "facebook"}
 z = x.isdisjoint(y)
 
 print(z)
+
+Exp 2:
+
+# Python program for isdisjoint() function
+set1 = {2, 4, 5, 6}
+set2 = {7, 8, 9, 10}
+set3 = {1, 2}
+ 
+# checking of disjoint of two sets
+print("set1 and set2 are disjoint?",
+      set1.isdisjoint(set2))
+ 
+print("set1 and set3 are disjoint?",
+      set1.isdisjoint(set3))
+
+
+Exp 3:
+
+# Set
+A = {2, 4, 5, 6}
+
+# List
+lis = [1, 2, 3, 4, 5]
+
+# Dictionary dict, Set is formed on Keys
+dict = {1: 'Apple', 2: 'Orage'}
+
+# Dictionary dict2
+dict2 = {'Apple': 1, 'Orage': 2}
+
+print("Set A and List lis disjoint?", A.isdisjoint(lis))
+print("Set A and dict are disjoint?", A.isdisjoint(dict))
+print("Set A and dict2 are disjoint?", A.isdisjoint(dict2))
+
+(9) issubset()
+----------------------------------------------------------------------------------------------------------------
+
+issubset()
+
+The issubset() method returns True if all items in the set exists in the specified set, otherwise it retuns False.
+
+Syntax:
+       set.issubset(set)
+
+Parameter Values
+Parameter	Description
+set	        Required. The set to search for equal items in
+
+Programs:
+--------------------
+Exp 1:
+#What if not all items are present in the specified set?
+
+#Return False if not all items in set x are present in set y:
+x = {"a", "b", "c"}
+y = {"f", "e", "d", "c", "b"}
+
+z = x.issubset(y)
+
+print(z)
+
+
+Exp 2:
+# Python program to demonstrate working of
+# issubset().
+
+A = {4, 1, 3, 5}
+B = {6, 0, 4, 1, 5, 0, 3, 5}
+
+# Returns True
+print(A.issubset(B))
+
+# Returns False
+# B is not subset of A
+print(B.issubset(A))
+
+(10) issuperset() 
+----------------------------------------------------------------------------------------------------------------------------
+
+The issuperset() method returns True if all items in the specified set exists in the original set, otherwise it retuns False.
+
+Syntax:
+       set.issuperset(set)
+
+Parameter Values
+Parameter 	Description
+set	        Required. The set to search for equal items in
+
+Programs:
+------------------
+Exp 1:
+#Return False if not all items in set y are present in set x:
+x = {"f", "e", "d", "c", "b"}
+y = {"a", "b", "c"}
+
+z = x.issuperset(y)
+
+print(z)
+
+
+Exp 2:
+# Python program to demonstrate working of
+# issuperset().
+
+A = {4, 1, 3, 5}
+B = {6, 0, 4, 1, 5, 0, 3, 5}
+
+print("A.issuperset(B) : ", A.issuperset(B))
+
+# B is superset of A
+print("B.issuperset(A) : ", B.issuperset(A))
+
+(11) Set pop():
+
+---------------------------------------------------------------------------------------------------------------------
+The pop() method removes a random item from the set.
+This method returns the removed item.
+
+Syntax:
+       set.pop()
+
+Programs:
+---------------
+
+Exp 1:
+S = {"kohli", "sachin", "sanjay", "Dravid", "sehwag"}
+
+# Print the set before using pop() method
+# First element after printing the set will be popped out
+print(S)
+
+# Popping three elements and printing them
+print(S.pop())
+print(S.pop())
+print(S.pop())
+
+# The updated set
+print("Updated set is", S)
+
+
+
+(12) Set symmetric_difference()
+------------------------------------------------------------------------------------------------------------------------------------
+The symmetric difference of two sets set1 and set2 is the set of elements which are in either of the sets set1 or set2 but not in both.
+
+Syntax:
+      set1_name.symmetric_difference(set2_name) 
+
+
+Parameters :
+It only takes a single set as the parameter. If a list, tuple or dictionary is passed it converts it a set and performs the task.
+
+Return value :
+Returns a set which is the symmetric difference between the two sets. 
+
+Programs:
+Exp 1:
+# Python program to demonstrate the use of 
+# of symmetric_difference() method 
+  
+  
+list1 = [1, 2, 3] 
+list2 = [2, 3, 4] 
+list3 = [3, 4, 5] 
+  
+# Convert list to sets
+set1 = set(list1) 
+set2 = set(list2) 
+  
+# Prints the symmetric difference when  
+# set is passed as a parameter 
+print(set1.symmetric_difference(set2)) 
+  
+# Prints the symmetric difference when list is 
+# passed as a parameter by converting it to a set
+print(set2.symmetric_difference(list3))
+
+
+(13) set symmetric_difference_update()
+-------------------------------------------------------------------------------------------------------------------------------
+
+The symmetric difference of two sets is the set of elements which are in either of the sets but not in both of them.
+
+Syntax: 
+      A.symmetric_difference_update(B) 
+
+Parameters: 
+The symmetric_difference takes a single “iterable” as an argument. Iterable should contain hashable object.
+Returns: 
+This method returns None (which indicates absence of a return value). It only updates the set calling symmetric_difference_update() with the symmetric difference of sets.
+
+Programs:
+Exp 1:
+A = {'p', 'a', 'w', 'a', 'n'}
+B = {'r', 'a', 'o', 'n', 'e'}
+
+# result is always none.
+result = A.symmetric_difference_update(B)
+
+print('A = ', A)
+print('B = ', B)
+print('result = ', result)
+
+
+Exp 2:
+# Python code to demonstrate working of
+# symmetric_difference_update()
+
+A = {'s', 'u', 'n', 'n', 'y'}
+B = {'b', 'u', 'n', 'n', 'y'}
+
+# result is always none.
+result = A.symmetric_difference_update(B)
+
+print('A = ', A)
+print('B = ', B)
+print('result = ', result)
+
+
+(14)  Set union()
+------------------------------------------------------------------------------------------------------------------------------
+The union() method returns a set that contains all items from the original set, and all items from the specified set(s).
+
+You can specify as many sets you want, separated by commas.
+
+It does not have to be a set, it can be any iterable object.
+
+If an item is present in more than one set, the result will contain only one appearance of this item.
+
+
+Syntax:
+       set.union(set1, set2...)
+
+Parameter Values
+Parameter	Description
+set1	        Required. The iterable to unify with
+set2	        Optional. The other iterable to unify with.You can compare as many iterables as you like.Separate each iterable with a comma
+
+Programs:
+set1 = {2, 4, 5, 6}
+set2 = {4, 6, 7, 8}
+set3 = {7, 8, 9, 10}
+
+# union of two sets
+print("set1 U set2 : ", set1.union(set2))
+
+# union of three sets
+print("set1 U set2 U set3 :", set1.union(set2, set3))
+
+Exp 2:
+x = {"a", "b", "c"}
+y = {"f", "d", "a"}
+z = {"c", "d", "e"}
+
+result = x.union(y, z)
+
+print(result)
+
+
+(15) Set update()
+----------------------------------------------------------------------------------------------------------------------
+The update() method updates the current set, by adding items from another set (or any other iterable).
+
+If an item is present in both sets, only one appearance of this item will be present in the updated set.
+
+Syntax:
+      set.update(set)
+Parameter Values
+Parameter	Description
+set	        Required. The iterable insert into the current set
+ 
+
+Programs:
+-----------------------------
+Exp 1:
+# Python program to demonstrate the
+# use of update() method
+ 
+list1 = [1, 2, 3]
+list2 = [5, 6, 7]
+list3 = [10, 11, 12]
+ 
+# Lists converted to sets
+set1 = set(list2)
+set2 = set(list1)
+ 
+# Update method
+set1.update(set2)
+ 
+# Print the updated set
+print(set1)
+ 
+# List is passed as an parameter which
+# gets automatically converted to a set
+set1.update(list3)
+print(set1)
+
+Exp 2:
+# Python program to demonstrate the
+# use of update() method
+ 
+list1 = [1, 2, 3, 4]
+list2 = [1, 4, 2, 3, 5]
+alphabet_set = {'a', 'b', 'c'}
+ 
+# lists converted to sets
+set1 = set(list2)
+set2 = set(list1)
+ 
+# Update method
+set1.update(set2)
+ 
+# Print the updated set
+print(set1)
+ 
+set1.update(alphabet_set)
+print(set1)
 
 
 
