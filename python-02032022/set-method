@@ -1,2 +1,26 @@
              Set Method
-             
+_______________________________________________________________
+
+SET:A Set in Python is a collection of unique elements which are unordered and mutable. 
+Python provides various functions to work with Set. In this article, we will see a list of all the functions provided by Python to deal with Sets.
+
+Types of Set Methods
+----------------------------------------------------------------
+
+add()	  -             Adds a given element to a set
+clear()	-             Removes all elements from the set
+copy()	-             Returns a shallow copy of the set
+difference() -        Returns a set that is the difference between two sets
+difference_update()	- Updates the existing caller set with the difference between two sets
+discard()-	          Removes the element from the set
+frozenset()	-         Return an immutable frozenset object
+intersection()-       Returns a set that has the intersection of all sets
+intersection_update()-Updates the existing caller set with the intersection of sets
+isdisjoint() -      	Checks whether the sets are disjoint or not
+issubset()-           Returns True if all elements of a set A are present in another set B
+issuperset() -	      Returns True if all elements of a set A occupies set B
+pop()	-               Returns and removes a random element from the set
+
+
+(1) set add()
+-------------------
