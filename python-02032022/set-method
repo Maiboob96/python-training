@@ -24,3 +24,277 @@ pop()	-               Returns and removes a random element from the set
 
 (1) set add()
 -------------------
+The set add() method adds a given element to a set if the element is not present in the set.
+
+Syntax:
+       set.add(elmnt)
+
+Parameter Values
+
+Parameter	Description
+elmnt      	Required. The element to add to the set
+
+Programs
+---------------------------------------------------
+Exp 1:
+languages = {"java", "c", "python"}
+
+languages.add("php")
+
+print(languages)
+
+EXP 2:
+
+# set of letters
+GEEK = {'g', 'e', 'k'}
+
+# adding 's'
+GEEK.add('s')
+print('Letters are:', GEEK)
+
+# adding 's' again
+GEEK.add('s')
+print('Letters are:', GEEK)
+
+Exp 3:
+s = {'g', 'e', 'e', 'k', 's'}
+t = ('f', 'o')
+
+# adding tuple t to set s.
+s.add(t)
+
+print(s)
+
+
+(2) set clear()
+------------------------------------------------------------
+The clear() method removes all elements from the set.
+
+Syntax:
+      set.clear()
+
+parameters:
+The clear() method doesn't take any parameters.
+Return:
+The clear() method doesn't return any value.
+
+Exp:(1)
+
+languages = {"python", "java", "php"}
+
+languages.clear()
+
+print(languages)
+
+(3)  set copy():
+-------------------------------------------------------------
+
+The copy() method copies the set
+
+Syntax:
+       set.copy()
+
+Parameters:The copy() method for sets doesn’t take any parameters.
+
+Return value:The function returns a shallow copy of the original set.
+
+Programs:
+Exp1:
+fruits = {"apple", "banana", "cherry"}
+
+x = fruits.copy()
+
+print(x)
+
+Exp 2:
+
+# of join() function
+
+set1 = {1, 2, 3, 4}
+
+# function to copy the set
+set2 = set1.copy()
+
+# prints the copied set
+print(set2)
+
+
+(4) set difference():
+----------------------------------------------------------------------------
+The difference() method returns a set that contains the difference between two sets.
+
+Meaning: The returned set contains items that exist only in the first set, and not in both sets.
+
+Syntax:
+      set.difference(set)
+
+Parameter Values
+Parameter	  Description
+set	        Required. The set to check for differences in
+
+Programs:
+-------------
+Exp1:
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = y.difference(x)
+print(z)
+
+
+Exp 2:
+A = {10, 20, 30, 40, 80}
+B = {100, 30, 80, 40, 60}
+print (A.difference(B))
+print (B.difference(A))
+
+
+(5)  set difference_update()
+----------------------------------------------------------------------------------------
+
+The difference_update() method removes the items that exist in both sets.
+
+The difference_update() method is different from the difference() method,
+because the difference() method returns a new set, without the unwanted items,
+and the difference_update() method removes the unwanted items from the original set.
+
+Syntax:
+      set.difference_update(set)
+      
+Programs:
+------------------
+Exp 1:
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.difference_update(y)
+
+print(x)
+
+
+Exp 2:
+
+A = {10, 20, 30, 40, 80}
+B = {100, 30, 80, 40, 60}
+
+# Modifies A and returns None
+A.difference_update(B)
+
+# Prints the modified set
+print(A)
+
+
+(6) set discard():
+--------------------------------------------------------------------
+
+The discard() method removes the specified item from the set.
+
+This method is different from the remove() method, because the remove() method will raise an error if the specified item does not exist, 
+and the discard() method will not.
+
+Syntax;
+      set.discard(value)
+
+Parameter Values
+Parameter	Description
+value	        Required. The item to search for, and remove
+
+Exp 1:
+
+fruits = {"apple", "banana", "cherry"}
+
+fruits.discard("banana")
+
+print(fruits)
+
+
+(7)  Set intersection() 
+---------------------------------------------------------------------------------
+The intersection() method returns a set that contains the similarity between two or more sets.
+
+Meaning: The returned set contains only items that exist in both sets, or in all sets if the comparison is done with more than two sets.
+
+Syntax:
+       set.intersection(set1, set2 ... etc)
+
+
+Parameter Values
+Parameter	   Description
+set1	       Required. The set to search for equal items in
+set2	       Optional. The other set to search for equal items in.You can compare as many sets you like Separate the sets with a comma.
+
+
+Programs:
+----------------------
+Exp 1:
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.intersection(y)
+
+print(z)
+
+
+Exp 2:
+
+# intersection() function
+set1 = {2, 4, 5, 6}
+set2 = {4, 6, 7, 8}
+set3 = {4, 6, 8}
+
+# union of two sets
+print("set1 intersection set2 : ",
+      set1.intersection(set2))
+
+# union of three sets
+print("set1 intersection set2 intersection set3 :",
+      set1.intersection(set2, set3))
+
+Exp 3:
+
+set1 = {}
+set2 = {}
+
+# union of two sets
+print("set1 intersection set2 : ",
+      set(set1).intersection(set(set2)))
+      
+
+(8) Set isdisjoint() 
+-----------------------------------------------------------------------------
+The isdisjoint() method returns True if none of the items are present in both sets, otherwise it returns False.
+
+Syntax:
+      set.isdisjoint(set) 
+
+Python isdisjoint() Parameters
+
+The isdisjoint() Python method takes only a single argument. It can also take an iterable (list, tuple, dictionary, and string) to disjoint(). 
+The isdisjoint() method will automatically convert iterables to set and checks whether the sets are disjoint or not.
+
+Python isdisjoint() Return Value
+
+returns Trueif the two sets are disjoint. 
+returns Falseif the twos sets are not disjoint.
+
+Programs:
+-------------
+Exp: 1
+
+x = {"java", "python", "php"}
+y = {"google", "microsoft", "facebook"}
+
+z = x.isdisjoint(y)
+
+print(z)
+
+
+
+
+
+
+
+
+
+
