@@ -1,1 +1,124 @@
 string
+
+# Python program to check whether the string is Symmetrical or Palindrome
+
+
+string = 'pythonprogram'
+half = int(len(string) / 2)
+
+if len(string) % 2 == 0:
+	first_str = string[:half]
+	second_str = string[half:]
+else:
+	first_str = string[:half]
+	second_str = string[half+1:]
+
+if first_str == second_str:
+	print(string, 'string is symmertical')
+else:
+	print(string, 'string is not symmertical')
+
+if first_str == second_str[::-1]:
+	print(string, 'string is palindrome')
+else:
+	print(string, 'string is not palindrome')
+
+
+
+# Reverse words in a given String in Python
+
+
+def rev_sentence(sentence):
+
+    words = sentence.split(' ')
+
+    reverse_sentence = ' '.join(reversed(words))
+
+    return reverse_sentence
+
+if __name__ == "__main__":
+    input = 'python programms for practice'
+    print(rev_sentence(input))
+
+
+
+# Ways to remove i’th character from string in Python
+
+
+test_str = "PythonPrograms"
+
+print ("The original string is : " + test_str)
+
+new_str = test_str[:2] + test_str[3:]
+
+print ("The string after removal of i'th character : " + new_str)
+
+
+
+test_str = "Programs"
+print ("The original string is : " + test_str)
+new_str = ''.join([test_str[i] for i in range(len(test_str)) if i != 2])
+print ("The string after removal of i'th character : " + new_str)
+
+
+
+# Find length of a string in python 
+
+
+str = "geeks"
+print(len(str))
+
+
+
+str = "pythonprogrms"
+print(len(str))
+
+
+
+def findLen(str):
+	counter = 0
+	for i in str:
+		counter += 1
+	return counter
+str = "Programming"
+print(findLen(str))
+
+
+
+def findLen(str):
+	if not str:
+		return 0
+	else:
+		some_random_str = 'py'
+		return ((some_random_str).join(str)).count(some_random_str) + 1
+str = "Python"
+print(findLen(str))
+
+
+
+# Python program to print even length words in a string
+
+
+def printWords(s):
+    s = s.split(' ')
+
+    for word in s:
+
+        if len(word) % 2 == 0:
+            print(word)
+s = "this is a python program"
+printWords(s)
+
+
+
+def printWords(s):
+    s = s.split(' ')
+    for word in s:
+        if len(word) % 2 == 0:
+            print(word)
+s = "python java c groovy  "
+printWords(s)
+
+
+
+
