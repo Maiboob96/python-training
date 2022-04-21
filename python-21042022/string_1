@@ -1,1 +1,222 @@
-string basic programs
+String basic programs
+
+# removing i-th character from a string
+
+
+def remove(string, i):
+    a = string[: i]
+    b = string[i + 1:]
+    return a + b
+
+if __name__ == '__main__':
+    string = "PythonPrograms"
+    i = 6
+
+    print(remove(string, i))
+
+
+
+str = "Programming"
+print("Original string: " + str)
+res_str = str[:2] + str[4:]
+print("String after removal of character: " + res_str)
+
+
+
+# program to split and join a string
+
+def split_string(string):
+    list_string = string.split(' ')
+    return list_string
+
+def join_string(list_string):
+    string = '-'.join(list_string)
+    return string
+
+if __name__ == '__main__':
+    string = 'Geeks for Geeks'
+
+    list_string = split_string(string)
+    print(list_string)
+
+    new_string = join_string(list_string)
+    print(new_string)
+
+
+
+# Frequency of numbers in String
+
+import re
+
+test_str = "python 1s 5rogrammin9 languag3e "
+
+print("The original string is : " + test_str)
+
+res = len(re.findall(r'\d+', test_str))
+
+print("Count of numerics in string : " + str(res))
+
+
+
+
+# Check if a given string is binary string or not
+
+def check(string):
+    p = set(string)
+    s = {'0', '1'}
+
+    if s == p or p == {'0'} or p == {'1'}:
+        print("Yes")
+    else:
+        print("No")
+
+if __name__ == "__main__":
+    string = "101010000111"
+    check(string)
+
+
+
+def check2(string):
+    t = '01'
+    count = 0
+
+    for char in string:
+        if char not in t:
+            count = 1
+            break
+        else:
+            pass
+    if count:
+        print("No")
+    else:
+        print("Yes")
+
+if __name__ == "__main__":
+    string = "0010123010001010"
+
+    check2(string)
+
+
+
+
+import re
+sampleInput = "1001010"
+c = re.compile('[^01]')
+
+if(len(c.findall(sampleInput))):
+	print("No")
+else:
+	print("Yes")
+
+
+
+
+# To find uncommon words from two Strings
+
+def uncommon(A, B):
+	un_comm = [i for i in "".join(B).split() if i not in "".join(A).split()]
+	return un_comm
+
+A = "Geeks for Geeks"
+B = "Learning from Geeks for Geeks"
+print(uncommon(A, B))
+
+
+
+def uncommon(a,b):
+  a=a.split()
+  b=b.split()
+  k=set(a).symmetric_difference(set(b))
+  return k
+
+if __name__=="__main__":
+  a="java c groovy c++ php"
+  b="python java c c++ php"
+  print(list(uncommon(a,b)))
+
+
+
+# Swap commas and dots in a String
+
+def Replace(str1):
+	maketrans = str1.maketrans
+	final = str1.translate(maketrans(',.', '.,', ' '))
+	return final.replace(',', ", ")
+
+string = "14, 625, 498.002"
+print(Replace(string))
+
+
+def Replace(str1):
+    str1 = str1.replace(', ', 'third')
+    str1 = str1.replace('.', ', ')
+    str1 = str1.replace('third', '.')
+    return str1
+
+string = "35, 50, 450.45"
+print(Replace(string))
+
+
+
+# Permutation of a given string using inbuilt function
+
+from itertools import permutations
+
+def allPermutations(str):
+    permList = permutations(str)
+    for perm in list(permList):
+        print(''.join(perm))
+
+if __name__ == "__main__":
+    str = 'python'
+    allPermutations(str)
+
+
+
+
+from itertools import permutations
+import string
+
+s = "program"
+a = string.ascii_letters
+p = permutations(s)
+d = []
+for i in list(p):
+	if (i not in d):
+		d.append(i)
+		print(''.join(i))
+
+
+
+def rotate(input,d):
+
+	Lfirst = input[0 : d]
+	Lsecond = input[d :]
+	Rfirst = input[0 : len(input)-d]
+	Rsecond = input[len(input)-d : ]
+
+	print ("Left Rotation : ", (Lsecond + Lfirst) )
+	print ("Right Rotation : ", (Rsecond + Rfirst))
+
+if __name__ == "__main__":
+	input = 'GeeksforGeeks'
+	d=2
+	rotate(input,d)
+
+
+# Uppercase Half String 
+
+test_str = 'pythonprograms'
+
+print("The original string is : " + str(test_str))
+
+hlf_idx = len(test_str) // 2
+res = ''
+for idx in range(len(test_str)):
+    if idx >= hlf_idx:
+        res += test_str[idx].upper()
+    else:
+        res += test_str[idx]
+print("The resultant string : " + str(res))
+
+
